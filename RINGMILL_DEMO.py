@@ -7,7 +7,7 @@ st.set_page_config(
 
 st.title("RINGMILL DEMO")
 
-st.sidebar.info("Select a demo above.")
+st.sidebar.infog("Select a demo above.")
 
 st.markdown(
     """
