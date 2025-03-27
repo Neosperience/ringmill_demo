@@ -25,7 +25,7 @@ tech_pdf = st.file_uploader("Carica il PDF che contiene Specifiche Tecniche", ty
 # st.divider()
 # text = st.text_input(label="refinement")
 
-if tech_pdf is not None and text is None:
+if tech_pdf is not None:
     try:
         st.divider()
         # Read the PDF using PyPDF2
