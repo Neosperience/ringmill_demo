@@ -22,8 +22,8 @@ def handle_empty(dictionary):
 # ---------------------------
 st.header("PDF con Specifiche Tecniche")
 tech_pdf = st.file_uploader("Carica il PDF che contiene Specifiche Tecniche", type="pdf", key="tech_pdf")
-st.divider()
-text = st.text_input(label="refinement")
+# st.divider()
+# text = st.text_input(label="refinement")
 
 if tech_pdf is not None and text is None:
     try:

@@ -22,8 +22,8 @@ def handle_empty(dictionary):
 # ---------------------------
 st.header("PDF con Intro")
 intro_pdf = st.file_uploader("Carica il PDF che contiene l'Intro", type="pdf", key="intro_pdf")
-st.divider()
-text = st.text_input(label="refinement")
+# st.divider()
+# text = st.text_input(label="refinement")
 
 if intro_pdf is not None:
     try:

@@ -22,8 +22,8 @@ def handle_empty(dictionary):
 # ---------------------------
 st.header("PDF con Disegni")
 image_pdf = st.file_uploader("Carica il PDF che contiene disegni", type="pdf", key="image_pdf")
-st.divider()
-text = st.text_input(label="refinement")
+# st.divider()
+# text = st.text_input(label="refinement")
 
 if image_pdf is not None:
     try:
