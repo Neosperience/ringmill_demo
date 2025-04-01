@@ -5,12 +5,12 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title("RINGMILL DEMO")
+st.title("RingMill Data Extraction")
 
 st.sidebar.info("Select a demo above.")
 
 st.markdown(
     """
-    Demo.
+    
 """
 )
