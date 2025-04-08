@@ -23,6 +23,14 @@ def handle_empty(dictionary):
 st.header("PDF con Intro")
 intro_pdf = st.file_uploader("Carica il PDF che contiene l'Intro", type="pdf", key="intro_pdf")
 
+refinement = (
+    '{"NomeCliente": "All capitalized, must be a company name not a person name you can find in the email. '
+    'Remove company type from the name like spa, srl, ltd, etc. The company name can not be Ring Mill, Ringmill, '
+    'Ring-mill, and all other possible combinations",'
+    '"TechnicalRequirements":"Retrieve only Technical Requirements explicitly mentioned and requested in the text or '
+    'tables. Do not pick them from file names in the fields attachments. Sometimes Technical Requirements appears as '
+    'separated strings on subsequent rows of a table e.g. EN 10204 3.1"}'
+)
 
 if intro_pdf is not None:
     try:
@@ -35,10 +43,10 @@ if intro_pdf is not None:
             "template": "ringmill-intro::001",
             "access_token": os.environ["YONDER_ACCESS_TOKEN"],
             "model_name": "gemini-2.0-flash",
-            "cheap_mode": "false"
+            "cheap_mode": "false",
         }
         data = {
-            "refinement": "{}"
+            "refinement": refinement   
         }
                     # Prepare the file payload for the API call
         files = {
