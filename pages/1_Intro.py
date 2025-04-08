@@ -25,7 +25,7 @@ intro_pdf = st.file_uploader("Carica il PDF che contiene l'Intro", type="pdf", k
 
 #adds refinement to the LLM prompt
 refinement = (
-    '{"NomeCliente": "All capitalized, must be a company name not a person name you can find in the email.Remove company type from the name like spa, srl, ltd, etc. The company name can not be Ring Mill, Ringmill,Ring-mill, and all other possible combinations","TechnicalRequirements":"Retrieve only Technical Requirements explicitly mentioned and requested in the text or tables. Do not pick them from file names in the fields attachments. Sometimes Technical Requirements appears as separated strings on subsequent rows of a table e.g. EN 10204 3.1"}'
+    '{"NomeCliente": "All capitalized, must be a company name not a person name you can find in the email. Remove company type from the name like spa, srl, ltd, etc. The company name can not be Ring Mill, Ringmill, Ring-mill, and all other possible combinations","TechnicalRequirements":"Retrieve only Technical Requirements explicitly mentioned and requested in the text or tables. Do not pick them from file names in the fields attachments. Sometimes Technical Requirements appears as separated strings on subsequent rows of a table e.g. EN 10204 3.1"}'
 )
 
 if intro_pdf is not None:
