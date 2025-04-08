@@ -33,7 +33,9 @@ if intro_pdf is not None:
         url = "https://vm11.yonderlabs.com/2.0/text/extractstructured"
         params = {
             "template": "ringmill-intro::001",
-            "access_token": os.environ["YONDER_ACCESS_TOKEN"]
+            "access_token": os.environ["YONDER_ACCESS_TOKEN"],
+            "model_name": "gemini-2.0-flash",
+            "cheap_mode": "false"
         }
         data = {
             "refinement": "{}"
@@ -47,7 +49,7 @@ if intro_pdf is not None:
         # Send the POST request for the current page
             response = requests.post(url, params=params, files=files, data=data, verify=False)
 
-        #st.write(f"Page {i+1} - Response Body: {response.text}")
+        #st.write(f"Page - Response Body: {response.text}")
         output = response.json()
         output = handle_empty(output)
         df = pd.DataFrame([output])

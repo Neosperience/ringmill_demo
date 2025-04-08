@@ -31,7 +31,9 @@ if tech_pdf is not None:
         url = "https://vm11.yonderlabs.com/2.0/text/extractstructured"
         params = {
         "template": "ringmill-specification::001",
-            "access_token": os.environ["YONDER_ACCESS_TOKEN"]
+            "access_token": os.environ["YONDER_ACCESS_TOKEN"],
+            "model_name": "gemini-2.0-flash",
+            "cheap_mode": "false"
         }
         data = {
             "refinement": "{}"
