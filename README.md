@@ -27,20 +27,20 @@ La chiamata alla Yonder API avviene nelle seguenti righe di codice ln 36-54:
 
         with st.spinner("Extracting Data...", show_time=True):
         # Send the POST request for the current page
-            response = requests.post(url, params=params, files=files, data=data, verify=False)````
+            response = requests.post(url, params=params, files=files, data=data, verify=False)```
 
 Nel caso si voglia modificare il refinement si può fare modificando a ln 27-28:
 ```#adds refinement to the LLM prompt
 refinement = (
     '{"NomeCliente": "All capitalized, must be a company name not a person name you can find in the email. Remove company type from the name like spa, srl, ltd, etc. The company name can not be Ring Mill, Ringmill, Ring-mill, and all other possible combinations","TechnicalRequirements":"Retrieve only Technical Requirements explicitly mentioned and requested in the text or tables. Do not pick them from file names in the fields attachments. Sometimes Technical Requirements appears as separated strings on subsequent rows of a table e.g. EN 10204 3.1"}'
-)````
+)```
 
 Per trattare le risposte nulle, ho scritto una piccola funzione che scrive queste riposte nulle come stringa "null". Questa funzione si trova in ln 14-18: 
 ```def handle_empty(dictionary):
     for key, value in dictionary.items():
         if len(value) == 0:
             dictionary[key] = "null"
-    return dictionary````
+    return dictionary```
 
 Il restante codice serve per mostrare la risposta della API in Streamlit.
 
